@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSS Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Frequency Selective Surface Analyzer</h1>
+    
+    <label for="frequency">Frequency (GHz):</label>
+    <input type="number" id="frequency" placeholder="Enter frequency">
+    
+    <label for="material">Substrate Material:</label>
+    <select id="material">
+        <option value="FR4">FR4</option>
+        <option value="Rogers4350B">Rogers 4350B</option>
+        <option value="Teflon">Teflon</option>
+    </select>
+    
+    <button onclick="calculateFSS()">Analyze</button>
+    <button onclick="downloadReport()">Download Report</button>
+
+    <h2>Results:</h2>
+    <p id="result"></p>
+
+    <h2>Select 3D Model:</h2>
+    <select id="modelType" onchange="generate3DVisualization()">
+        <option value="cube">Cube</option>
+        <option value="sphere">Sphere</option>
+        <option value="cylinder">Cylinder</option>
+        <option value="torusKnot">Torus Knot</option>
+    </select>
+
+    <h2>3D Visualization:</h2>
+    <div id="visualization"></div>
+
+    <h2>Reflection Coefficients Graph:</h2>
+    <div id="graph"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
